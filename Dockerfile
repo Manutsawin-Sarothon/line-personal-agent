@@ -13,6 +13,5 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 COPY --from=build /app/dist ./dist
 RUN mkdir -p /app/data
-VOLUME ["/app/data"]
 EXPOSE 3000
 CMD ["node", "dist/src/server.js"]
