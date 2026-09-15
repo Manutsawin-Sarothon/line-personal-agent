@@ -9,7 +9,7 @@ import { formatReminder, startReminderWorker } from "./reminders.js";
 const config = loadConfig();
 const store = new ReminderStore(config.DATABASE_PATH);
 const line = new messagingApi.MessagingApiClient({ channelAccessToken: config.LINE_CHANNEL_ACCESS_TOKEN });
-const agent = new PersonalAgent(config.OPENAI_API_KEY, config.OPENAI_MODEL, config.TIMEZONE);
+const agent = new PersonalAgent(config.GEMINI_API_KEY, config.GEMINI_MODEL, config.TIMEZONE);
 const app = express();
 
 app.get("/health", (_req, res) => res.json({ ok: true }));
